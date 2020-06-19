@@ -1,0 +1,91 @@
+title = "РІКОС РІВНЕ"
+url = "/rikoscoop"
+layout = "default"
+is_hidden = 0
+==
+<header>
+  <div class="container">
+    <div class="row">
+    <div class="hidden visible-xs col-xs-2">
+        <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+        <label for="openSidebarMenu" class="sidebarIconToggle">
+          <div class="spinner diagonal part-1"></div>
+          <div class="spinner horizontal"></div>
+          <div class="spinner diagonal part-2"></div>
+        </label>
+        <div id="sidebarMenu">
+          <ul class="sidebarMenuInner">
+            <li><a href="/katalog">Каталог</a></li>
+            <li><a href="/about_us">Про компанію</a></li>
+            <li><a href="/contact">Контакти</a></li>
+            <li><a href="">+38 (03622) 530-16</a></li>
+          </ul>
+        </div>
+
+  </div>
+      <div class="col-md-4 col-sm-5 col-xs-10 logo">
+        <div id="logo">
+                                    <a href="http://www.rikoscoop.com.ua/"><img src="https://www.rikoscoop.com.ua/image/catalog/logo.png" title="Рікос" alt="Рікос" class="img-responsive"></a>
+                              </div>
+      </div>
+      <div class="col-md-4 col-sm-7 col-xs-10 search"><div id="search" class="input-group">
+  <input type="text" name="search" value="" placeholder="Пошук товару в магазині" class="form-control input-lg flexdatalist flexdatalist-set" style="position: absolute; top: -14000px; left: -14000px;"><input type="text" class="form-control input-lg flexdatalist-alias flex0" name="flexdatalist-search" id="flex0" value="" autocomplete="off">
+  <span class="input-group-btn">
+    <button type="button" class="btn btn-default btn-lg"><i class="fa fa-search"></i></button>
+  </span>
+</div>      </div>
+      <div class="col-md-3 col-sm-3 hidden-sm hidden-xs info">
+        <ul class="list-unstyled">
+          <li class="open">
+            Пн - Пт: з 09:00 до 18:00          </li>
+          <li class="phone">
+            <a href="tel:+38 (03622) 530-16"> +38 (03622) 530-16</a>
+          </li>
+          <li class="recall">
+            <a href="javascript:void(0)" onclick="$('#xd_zvonok_modal').modal('show');" id="xd_zvonok_phone_button">
+          Замовити дзвінок
+        </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-1 col-sm-1 col-xs-2 shopping-cart">
+      <div id="cart" class="btn-group btn-block">
+  <button type="button" data-loading-text="Завантаження..." class="btn btn-inverse btn-block btn-lg "><a href="/checkout"><span id="cart-total">0</span><img src="/image/catalog/icon/basket-icon.png" class="img-responsive"></a></button>
+  <!--<ul class="dropdown-menu pull-right">
+        <li>
+      <p class="text-center">В кошику немає товарів :(</p>
+    </li>
+      </ul>-->
+</div>
+      </div>
+      
+    </div>
+  </div>
+
+			<!--Noticeup Livesearch-->
+			<script>
+			$("#search input[name='search']").flexdatalist({
+				minLength: 0,
+				iconProperty: 'image',
+				visibleProperties: ["name"],
+				textProperty: 'name',
+				searchDisabled: true,
+        noResultsText: 'text_no_results',
+								url: 'index.php?route=product/search/livesearch'
+			});
+
+			$("#search input[name='search']").on('select:flexdatalist', function(event, set, options) {
+				window.location.href = htmlUnescape(set.href);
+			});
+
+			function htmlUnescape(str){
+			  return str
+				  .replace(/&quot;/g, '"')
+				  .replace(/&#39;/g, "'")
+				  .replace(/&lt;/g, '<')
+				  .replace(/&gt;/g, '>')
+				  .replace(/&amp;/g, '&');
+			}
+			</script>
+		
+</header>
